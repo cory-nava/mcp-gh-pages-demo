@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨ NAVA PBC - PUBLIC BENEFIT CORPORATION ✨</title>
     <style>
+        * {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">🏛️</text></svg>'), auto;
+        }
         body {
             background-color: #000080;
             background-image: 
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23000080"/><circle cx="10" cy="10" r="2" fill="%23FFD700" opacity="0.3"/><circle cx="50" cy="40" r="1.5" fill="%23FFF" opacity="0.4"/><circle cx="80" cy="70" r="2" fill="%23FFD700" opacity="0.3"/><circle cx="30" cy="80" r="1" fill="%23FFF" opacity="0.4"/></svg>');
             margin: 0;
             padding: 20px;
-            font-family: 'Comic Sans MS', cursive;
+            font-family: Papyrus, fantasy;
             color: #00ff00;
         }
         .container {
@@ -32,10 +35,30 @@
             animation: rainbow 3s linear infinite;
             margin: 0 0 20px 0;
             text-shadow: 2px 2px 0 #000;
+            font-family: Papyrus, fantasy;
         }
         @keyframes rainbow {
             0% { filter: hue-rotate(0deg); }
             100% { filter: hue-rotate(360deg); }
+        }
+        .wordart {
+            font-family: Papyrus, fantasy;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            background: linear-gradient(180deg, #ff0000 0%, #ff7f00 20%, #ffff00 40%, #00ff00 60%, #0000ff 80%, #9400d3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.5), 6px 6px 0 rgba(255,0,255,0.3);
+            transform: perspective(200px) rotateX(10deg);
+            margin: 30px 0;
+            letter-spacing: 2px;
+            animation: wordart-shimmer 3s infinite;
+        }
+        @keyframes wordart-shimmer {
+            0%, 100% { filter: brightness(1) saturate(1.5); }
+            50% { filter: brightness(1.3) saturate(2); }
         }
         h2 {
             color: #ff00ff;
@@ -44,6 +67,7 @@
             text-align: center;
             text-shadow: 2px 2px #00ffff;
             margin-top: 30px;
+            font-family: Papyrus, fantasy;
         }
         h3 {
             color: #ffff00;
@@ -53,6 +77,7 @@
             border: 3px dashed #00ff00;
             display: inline-block;
             margin: 15px 0 10px 0;
+            font-family: Papyrus, fantasy;
         }
         marquee {
             font-size: 1.3rem;
@@ -62,6 +87,7 @@
             border: 3px solid #00ffff;
             margin: 20px 0;
             font-weight: bold;
+            font-family: Papyrus, fantasy;
         }
         .hero-box {
             background: linear-gradient(135deg, #ff00ff 0%, #00ffff 100%);
@@ -73,6 +99,7 @@
             font-size: 1.3rem;
             font-weight: bold;
             box-shadow: 0 0 20px #ff00ff;
+            font-family: Papyrus, fantasy;
         }
         .stat-box {
             background: #00ff00;
@@ -84,6 +111,7 @@
             font-weight: bold;
             text-align: center;
             box-shadow: 5px 5px 0 #ff00ff;
+            font-family: Papyrus, fantasy;
         }
         .news-item {
             background: rgba(255, 0, 255, 0.2);
@@ -104,6 +132,7 @@
             color: #ff00ff;
             font-size: 0.9rem;
             font-style: italic;
+            font-family: Papyrus, fantasy;
         }
         .partner-box {
             background: #ffff00;
@@ -114,6 +143,7 @@
             text-align: center;
             font-size: 1.2rem;
             font-weight: bold;
+            font-family: Papyrus, fantasy;
         }
         .back-link {
             display: inline-block;
@@ -125,6 +155,8 @@
             font-size: 1.2rem;
             margin: 20px 0;
             box-shadow: 0 0 10px #00ffff;
+            font-family: Papyrus, fantasy;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><text y="24" font-size="24">👈</text></svg>'), pointer;
         }
         .back-link:hover {
             background: linear-gradient(45deg, #00ffff, #00ff00);
@@ -141,6 +173,7 @@
             color: #00ffff;
             line-height: 1.6;
             font-size: 1.1rem;
+            font-family: 'Comic Sans MS', cursive;
         }
         .star {
             color: #ffff00;
@@ -153,15 +186,38 @@
         ul {
             color: #00ff00;
             font-size: 1.1rem;
+            font-family: Papyrus, fantasy;
         }
         li {
             margin: 10px 0;
         }
+        .music-note {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            animation: bounce 1s infinite;
+            z-index: 9999;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
     </style>
 </head>
 <body>
+    <!-- Autoplay music -->
+    <audio autoplay loop>
+        <source src="danger-zone.mp3" type="audio/mpeg">
+    </audio>
+    <div class="music-note">🎵</div>
+    
     <div class="container">
-        <h1>✨ NAVA PUBLIC BENEFIT CORPORATION ✨</h1>
+        <div class="wordart" style="font-size: 2.5rem;">
+            ✨ NAVA ✨
+        </div>
+        
+        <h1>PUBLIC BENEFIT CORPORATION</h1>
         
         <marquee behavior="scroll" direction="left" scrollamount="8">
             🌟 BUILDING LONG-TERM MOMENTUM FOR EFFECTIVE GOVERNMENT SERVICES!!! 🌟
@@ -175,9 +231,13 @@
             RESILIENT AND HUMAN-CENTERED GOVERNMENT SERVICES!!!
         </div>
         
-        <h2><span class="star">★</span> SETTING THE STANDARD FOR DIGITAL SERVICES <span class="star">★</span></h2>
+        <div class="wordart" style="font-size: 2rem;">
+            ~*~ SETTING THE STANDARD ~*~
+        </div>
         
-        <p style="text-align: center; font-size: 1.2rem;">
+        <h2><span class="star">★</span> FOR DIGITAL SERVICES <span class="star">★</span></h2>
+        
+        <p style="text-align: center; font-size: 1.2rem; font-family: Papyrus, fantasy;">
             Since 2015, federal, state, and local government agencies have trusted Nava<br>
             to solve highly scrutinized technology challenges!!!
         </p>
@@ -198,7 +258,9 @@
             <span class="star">⭐</span> SUPPORTING STRUCTURAL CHANGE IN GOVERNMENT AT EVERY LEVEL <span class="star">⭐</span>
         </marquee>
         
-        <h2>🎯 OUR MISSION 🎯</h2>
+        <div class="wordart">
+            ✧･ﾟ OUR MISSION ･ﾟ✧
+        </div>
         
         <div style="background: rgba(255,255,0,0.2); padding: 20px; border: 3px solid #ffff00; margin: 20px 0;">
             <ul>
@@ -215,7 +277,11 @@
             WE POSITIVELY TRANSFORM HOW MILLIONS OF PEOPLE EXPERIENCE GOVERNMENT!!!
         </div>
         
-        <h2 class="blink">📰 LATEST NEWS & UPDATES 📰</h2>
+        <div class="wordart" style="font-size: 2.5rem;">
+            ✨ LATEST NEWS ✨
+        </div>
+        
+        <h2 class="blink">📰 & UPDATES 📰</h2>
         
         <div class="news-item">
             <h3>🔬 5 takeaways from Nava Labs' site visit to California</h3>
@@ -294,7 +360,9 @@
             <p>Learn how DevEx goes beyond traditional service design practices by optimizing the entire technical ecosystem.</p>
         </div>
         
-        <h2>🏛️ FEATURED PROJECTS 🏛️</h2>
+        <div class="wordart" style="font-size: 2rem;">
+            ✧ FEATURED PROJECTS ✧
+        </div>
         
         <div class="news-item">
             <h3>🎁 U.S. Department of Health and Human Services</h3>
@@ -327,13 +395,13 @@
         </div>
         
         <div style="text-align: center; padding: 30px; background: rgba(255,215,0,0.2); border: 3px dashed #FFD700; margin-top: 30px;">
-            <p style="color: #ffff00; font-size: 1.3rem; margin: 0;">
+            <p style="color: #ffff00; font-size: 1.3rem; margin: 0; font-family: Papyrus, fantasy;">
                 <span class="star">⭐</span> IN FACT, WE'VE ONLY BECOME MORE DETERMINED TO DELIVER <span class="star">⭐</span><br>
                 <span class="blink" style="font-size: 1.5rem; color: #ff00ff;">CRITICAL BENEFITS AT SCALE TO MILLIONS IN NEED!!!</span>
             </p>
         </div>
         
-        <div style="text-align: center; margin-top: 30px; color: #00ffff;">
+        <div style="text-align: center; margin-top: 30px; color: #00ffff; font-family: Papyrus, fantasy;">
             <p>🚧 PAGE LAST UPDATED: NOVEMBER 2025 🚧</p>
             <p><span class="star">★</span> Best viewed in Internet Explorer 6.0 <span class="star">★</span></p>
             <p class="blink">👾 GEOCITIES FOREVER 👾</p>
