@@ -81,6 +81,28 @@
             background: linear-gradient(45deg, #ff00ff, #00ffff);
             box-shadow: 0 0 20px #00ffff;
         }
+        .nava-link {
+            display: block;
+            background: linear-gradient(135deg, #00ff00, #00ffff);
+            color: #000080;
+            text-decoration: none;
+            padding: 20px;
+            border: 5px outset #ffff00;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 0 15px #00ff00;
+            animation: pulse 2s infinite;
+        }
+        .nava-link:hover {
+            background: linear-gradient(135deg, #ffff00, #ff00ff);
+            box-shadow: 0 0 30px #ffff00;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
         .footer {
             text-align: center;
             margin-top: 30px;
@@ -106,6 +128,11 @@
         </marquee>
         
         <div id="datetime"></div>
+        
+        <a href="nava.html" class="nava-link">
+            🏛️ CLICK HERE TO LEARN ABOUT NAVA PBC!!! 🏛️<br>
+            <span style="font-size: 1rem;">(PUBLIC BENEFIT CORPORATION)</span>
+        </a>
         
         <div class="location-box">
             <div id="location">
