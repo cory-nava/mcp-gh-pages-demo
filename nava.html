@@ -113,6 +113,72 @@
             box-shadow: 5px 5px 0 #ff00ff;
             font-family: Papyrus, fantasy;
         }
+        .top8-section {
+            background: linear-gradient(135deg, rgba(255,0,255,0.3), rgba(0,255,255,0.3));
+            border: 5px ridge #FFD700;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 0 25px #ff00ff;
+        }
+        .top8-title {
+            font-family: Papyrus, fantasy;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #ffff00;
+            text-shadow: 3px 3px 0 #ff00ff, 5px 5px 0 #00ffff;
+            margin-bottom: 30px;
+        }
+        .top8-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .top8-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .friend-box {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            border: 3px solid #ff00ff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .friend-box:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 8px 8px 0 rgba(255,0,255,0.8);
+        }
+        .friend-number {
+            background: #ff00ff;
+            color: #ffff00;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            border: 2px solid #ffff00;
+            font-family: Papyrus, fantasy;
+        }
+        .friend-icon {
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+        .friend-name {
+            font-family: Papyrus, fantasy;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #000080;
+            margin-top: 10px;
+            line-height: 1.2;
+        }
         .news-item {
             background: rgba(255, 0, 255, 0.2);
             border: 3px ridge #00ffff;
@@ -229,6 +295,55 @@
             <span class="blink">🎯</span> OUR 2025 PUBLIC BENEFIT REPORT <span class="blink">🎯</span><br>
             HIGHLIGHTS HOW NAVA IS LEADING THE WAY IN BUILDING<br>
             RESILIENT AND HUMAN-CENTERED GOVERNMENT SERVICES!!!
+        </div>
+        
+        <!-- TOP 8 FRIENDS SECTION -->
+        <div class="top8-section">
+            <div class="top8-title">
+                ✨ NAVA's Top 8 Government Partners ✨
+            </div>
+            <div class="top8-grid">
+                <div class="friend-box">
+                    <div class="friend-number">1</div>
+                    <div class="friend-icon">🏥</div>
+                    <div class="friend-name">U.S. Dept of Health & Human Services</div>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-number">2</div>
+                    <div class="friend-icon">🎖️</div>
+                    <div class="friend-name">U.S. Department of Veterans Affairs</div>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-number">3</div>
+                    <div class="friend-icon">👨‍👩‍👧</div>
+                    <div class="friend-name">Commonwealth of Massachusetts</div>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-number">4</div>
+                    <div class="friend-icon">🎓</div>
+                    <div class="friend-name">U.S. Department of Education</div>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-number">5</div>
+                    <div class="friend-icon">🏔️</div>
+                    <div class="friend-name">State of Minnesota</div>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-number">6</div>
+                    <div class="friend-icon">💰</div>
+                    <div class="friend-name">Gates Foundation</div>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-number">7</div>
+                    <div class="friend-icon">🤝</div>
+                    <div class="friend-name">Goodwill Industries (TX & PA)</div>
+                </div>
+                <div class="friend-box">
+                    <div class="friend-number">8</div>
+                    <div class="friend-icon">👨‍👩‍👧‍👦</div>
+                    <div class="friend-name">Imagine LA</div>
+                </div>
+            </div>
         </div>
         
         <div class="wordart" style="font-size: 2rem;">
