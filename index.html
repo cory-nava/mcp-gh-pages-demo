@@ -3,35 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>~*~HELLO WORLD~*~</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background-color: #000080;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.03) 10px, rgba(255,255,255,.03) 20px),
+                repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,.03) 10px, rgba(255,255,255,.03) 20px);
             margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+            font-family: 'Comic Sans MS', cursive;
+            color: #00ff00;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            border: 5px ridge #FFD700;
+            padding: 20px;
+            box-shadow: 0 0 20px #ff00ff;
         }
         h1 {
-            font-size: 5rem;
-            color: white;
+            font-size: 4rem;
+            text-align: center;
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s linear infinite;
+            text-shadow: 2px 2px 0 #000;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        marquee {
+            font-size: 1.5rem;
+            color: #ff00ff;
+            background: #ffff00;
+            padding: 10px;
+            border: 3px dashed #00ffff;
+            margin: 20px 0;
         }
         #datetime {
             font-size: 2rem;
-            color: #f0f0f0;
-            margin-top: 1rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-align: center;
+            color: #00ffff;
+            text-shadow: 2px 2px #ff00ff;
+            margin: 20px 0;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.5; }
+        }
+        .location-box {
+            background: #ff00ff;
+            color: #ffff00;
+            padding: 15px;
+            border: 5px double #00ff00;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        button {
+            background: linear-gradient(45deg, #ff0000, #ff00ff);
+            color: white;
+            border: 3px outset #ffffff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-family: 'Comic Sans MS', cursive;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            box-shadow: 0 0 20px #00ffff;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #ffff00;
+            font-size: 0.9rem;
+        }
+        .star {
+            color: #ffff00;
+            animation: twinkle 1.5s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
     </style>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <div id="datetime"></div>
+    <div class="container">
+        <h1>✨ HELLO WORLD ✨</h1>
+        
+        <marquee behavior="scroll" direction="left">
+            🌟 WELCOME TO MY AWESOME WEBPAGE!!! 🌟 You are visitor #1337 🌟
+        </marquee>
+        
+        <div id="datetime"></div>
+        
+        <div class="location-box">
+            <div id="location">
+                📍 <strong>WHERE ARE YOU FROM?</strong> 📍<br>
+                <button onclick="getLocation()">Click here to find out! 🌍</button>
+            </div>
+        </div>
+        
+        <marquee behavior="alternate" direction="right" scrollamount="5">
+            <span class="star">⭐</span> GEOCITIES 4EVER <span class="star">⭐</span>
+        </marquee>
+        
+        <div class="footer">
+            <p>🚧 UNDER CONSTRUCTION 🚧</p>
+            <p>Best viewed in Netscape Navigator 4.0</p>
+            <p><span class="star">★</span> Last updated: <span id="update-date"></span> <span class="star">★</span></p>
+        </div>
+    </div>
     
     <script>
         function updateDateTime() {
@@ -40,6 +132,47 @@
         }
         updateDateTime();
         setInterval(updateDateTime, 1000);
+        
+        document.getElementById('update-date').textContent = new Date().toLocaleDateString();
+        
+        function getLocation() {
+            const locationDiv = document.getElementById('location');
+            if (navigator.geolocation) {
+                locationDiv.innerHTML = '🔄 LOADING YOUR COORDINATES... 🔄';
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                locationDiv.innerHTML = '❌ Geolocation not supported by your browser ❌';
+            }
+        }
+        
+        function showPosition(position) {
+            const lat = position.coords.latitude.toFixed(4);
+            const lon = position.coords.longitude.toFixed(4);
+            document.getElementById('location').innerHTML = `
+                <strong>🌎 YOU ARE HERE! 🌎</strong><br>
+                📍 Latitude: ${lat}°<br>
+                📍 Longitude: ${lon}°<br>
+                <small>Accuracy: ${position.coords.accuracy.toFixed(0)}m</small>
+            `;
+        }
+        
+        function showError(error) {
+            let message = '';
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    message = '❌ You denied the location request! ❌';
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    message = '❌ Location information unavailable ❌';
+                    break;
+                case error.TIMEOUT:
+                    message = '❌ Request timed out ❌';
+                    break;
+                default:
+                    message = '❌ An unknown error occurred ❌';
+            }
+            document.getElementById('location').innerHTML = message;
+        }
     </script>
 </body>
 </html>
